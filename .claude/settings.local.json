@@ -1,0 +1,24 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find C:VBOXdevserverdev_08.docs -type f -name *)",
+      "Bash(npm create:*)",
+      "Bash(npm init:*)",
+      "Bash(npm install:*)",
+      "Bash(npx vite:*)",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(xargs -r kill)",
+      "Bash(netstat -ano)",
+      "Bash(taskkill //PID 2236 //F)",
+      "Bash(python3 \"C:/Users/User/AppData/Roaming/Claude/local-agent-mode-sessions/skills-plugin/3a63dbb6-1836-4138-a268-d4e9981ad6b7/5d59506a-74ac-4677-8261-f5621f366dfb/skills/ui-ux-pro-max/scripts/design_system.py\" \"professional coaching consulting service corporate warm orange\" --design-system -p \"Cosama Coaching\")",
+      "Bash(python3 \"C:/Users/User/AppData/Roaming/Claude/local-agent-mode-sessions/skills-plugin/3a63dbb6-1836-4138-a268-d4e9981ad6b7/5d59506a-74ac-4677-8261-f5621f366dfb/skills/ui-ux-pro-max/scripts/design_system.py\" --help)",
+      "Bash(python3 \"C:/Users/User/AppData/Roaming/Claude/local-agent-mode-sessions/skills-plugin/3a63dbb6-1836-4138-a268-d4e9981ad6b7/5d59506a-74ac-4677-8261-f5621f366dfb/skills/ui-ux-pro-max/scripts/design_system.py\" \"professional coaching consulting service corporate warm orange\" -p \"Cosama Coaching\" -f markdown)",
+      "Bash(PYTHONIOENCODING=utf-8 python3 \"C:/Users/User/AppData/Roaming/Claude/local-agent-mode-sessions/skills-plugin/3a63dbb6-1836-4138-a268-d4e9981ad6b7/5d59506a-74ac-4677-8261-f5621f366dfb/skills/ui-ux-pro-max/scripts/design_system.py\" \"professional coaching consulting service corporate warm orange\" -p \"Cosama Coaching\" -f markdown)",
+      "Bash(ls C:VBOXdevserverdev_08.docs*)",
+      "Bash(ls C:VBOXdevserverdev_08*.doc*)",
+      "Bash(ls C:VBOXdevserver/*docs*)",
+      "Bash(find C:VBOXdevserver -maxdepth 1 -name *doc* -o -name *docs*)",
+      "Bash(find C:VBOXdevserverdev_08 -maxdepth 2 -name *.doc* -o -name *.txt -o -name *.md -o -name *.pdf)"
+    ]
+  }
+}
