@@ -1,4 +1,6 @@
 node_modules
+.docs
+.claude
 .DS_Store
 dist
 dist-ssr
