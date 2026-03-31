@@ -8,6 +8,7 @@ import Training from './pages/Training';
 import Consulting from './pages/Consulting';
 import Contact from './pages/Contact';
 import GetStarted from './pages/GetStarted';
+import SmallBusiness from './pages/SmallBusiness';
 
 export default function App() {
   return (
@@ -22,6 +23,7 @@ export default function App() {
         <Route path="consulting" element={<Consulting />} />
         <Route path="contact" element={<Contact />} />
         <Route path="get-started" element={<GetStarted />} />
+        <Route path="small-business" element={<SmallBusiness />} />
       </Route>
     </Routes>
     </>

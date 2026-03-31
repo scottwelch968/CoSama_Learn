@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight, Search, GitBranch, Layers, ClipboardList, Users, BarChart3, CheckCircle, ChevronRight } from 'lucide-react';
+import InviteCta from '../components/InviteCta';
+import Seo from '../components/Seo';
 import useScrollReveal from '../hooks/useScrollReveal';
 
 const CAPABILITIES = [
@@ -23,6 +25,11 @@ export default function Consulting() {
 
   return (
     <>
+      <Seo
+        title="AI Consulting"
+        description="End-to-end AI integration, project management, and change management. From strategy to go-live — we build the bridge to AI for your organization."
+        path="/consulting"
+      />
       {/* ── Hero ── */}
       <section className="hero">
         <div className="hero-centered">
@@ -123,16 +130,7 @@ export default function Consulting() {
       <hr className="section-divider" />
 
       {/* ── CTA ── */}
-      <div className="cta-band-wrapper">
-        <section className="cta-band reveal">
-          <div className="section-label">Grab an Invite Now!</div>
-          <h2 className="section-title">Ready to Move from Pilot to Production?</h2>
-          <form className="cta-band-form" onSubmit={e => e.preventDefault()}>
-            <input type="email" className="form-input" placeholder="Enter your work email" />
-            <button type="submit" className="btn btn-primary">Submit</button>
-          </form>
-        </section>
-      </div>
+      <InviteCta title="Ready to Move from Pilot to Production?" />
     </>
   );
 }

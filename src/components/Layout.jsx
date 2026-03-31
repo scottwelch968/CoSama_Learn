@@ -104,7 +104,6 @@ export default function Layout() {
             <div>
               <div className="footer-col-title">Connect</div>
               <Link to="/contact" className="footer-link">Book a Call</Link>
-              <a href="mailto:hello@cosama.co" className="footer-link">hello@cosama.co</a>
             </div>
           </div>
 

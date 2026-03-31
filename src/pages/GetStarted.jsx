@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight, Brain, Users, Rocket, Shield, CheckCircle, AlertCircle } from 'lucide-react';
+import InviteCta from '../components/InviteCta';
+import Seo from '../components/Seo';
 import useScrollReveal from '../hooks/useScrollReveal';
 
 const PAIN_POINTS = [
@@ -13,6 +15,11 @@ export default function GetStarted() {
 
   return (
     <>
+      <Seo
+        title="Get Started"
+        description="Stop guessing about AI. Get expert coaching, hands-on training, and real-world deployment support from the team at Cosama."
+        path="/get-started"
+      />
       {/* ── Hero ── */}
       <section className="hero">
         <div className="hero-centered">
@@ -25,7 +32,7 @@ export default function GetStarted() {
           </p>
           <div className="hero-brutal__actions">
             <Link to="/contact" className="btn btn-primary btn-lg">
-              Tell Us About Your Business <ArrowRight size={14} />
+              Give Us Your Contact Info <ArrowRight size={14} />
             </Link>
           </div>
         </div>
@@ -82,7 +89,7 @@ export default function GetStarted() {
                 <Users size={24} className="editorial-cell__icon" style={{ marginBottom: 'var(--space-sm)' }} />
                 <h3 className="editorial-cell__title" style={{ marginBottom: 'var(--space-sm)' }}>Training</h3>
                 <p className="editorial-cell__text">
-                  Live interactive courses with full materials and prompt libraries. 12 courses across every business function.
+                  Claude, Claude Code, agentic AI, and MCP servers. 12 hands-on courses from foundation to advanced.
                 </p>
                 <div className="pricing-inline" style={{ marginTop: 'auto', paddingTop: 'var(--space-sm)' }}>
                   Group rates available &middot; <span className="pricing-inline__value">10+ participants</span>
@@ -126,16 +133,7 @@ export default function GetStarted() {
       <hr className="section-divider" />
 
       {/* ── CTA ── */}
-      <div className="cta-band-wrapper">
-        <section className="cta-band reveal">
-          <div className="section-label">Grab an Invite Now!</div>
-          <h2 className="section-title">We Take On a Limited Number of New Clients Each Quarter</h2>
-          <form className="cta-band-form" onSubmit={e => e.preventDefault()}>
-            <input type="email" className="form-input" placeholder="Enter your work email" />
-            <button type="submit" className="btn btn-primary">Submit</button>
-          </form>
-        </section>
-      </div>
+      <InviteCta title="We Take On a Limited Number of New Clients Each Quarter" />
     </>
   );
 }

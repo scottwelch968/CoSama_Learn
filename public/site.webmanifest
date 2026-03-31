@@ -1,0 +1,26 @@
+{
+  "name": "Cosama AI — Coaching, Training & Consulting",
+  "short_name": "Cosama",
+  "description": "AI coaching, training, and consulting for business. Master Claude, build AI agents, and deploy autonomous workflows.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f4f4f0",
+  "theme_color": "#1a1a1a",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, CheckCircle, Clock, Video, MapPin } from 'lucide-react';
+import InviteCta from '../components/InviteCta';
+import Seo from '../components/Seo';
 import useScrollReveal from '../hooks/useScrollReveal';
 
 const ROLES = [
@@ -16,6 +18,11 @@ export default function Coaching() {
 
   return (
     <>
+      <Seo
+        title="AI Coaching"
+        description="1-on-1 AI coaching built around your business. Structured packages from discovery through implementation. Walk away with a concrete AI action plan."
+        path="/coaching"
+      />
       {/* ── Hero ── */}
       <section className="hero">
         <div className="hero-centered">
@@ -219,16 +226,7 @@ export default function Coaching() {
       <hr className="section-divider" />
 
       {/* ── CTA ── */}
-      <div className="cta-band-wrapper">
-        <section className="cta-band reveal">
-          <div className="section-label">Grab an Invite Now!</div>
-          <h2 className="section-title">Ready to Build Your AI Strategy?</h2>
-          <form className="cta-band-form" onSubmit={e => e.preventDefault()}>
-            <input type="email" className="form-input" placeholder="Enter your work email" />
-            <button type="submit" className="btn btn-primary">Submit</button>
-          </form>
-        </section>
-      </div>
+      <InviteCta title="Ready to Build Your AI Strategy?" />
     </>
   );
 }

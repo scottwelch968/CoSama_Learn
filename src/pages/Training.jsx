@@ -1,27 +1,56 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight, CheckCircle, BookOpen, Users, GraduationCap, ChevronRight } from 'lucide-react';
+import InviteCta from '../components/InviteCta';
+import Seo from '../components/Seo';
 import useScrollReveal from '../hooks/useScrollReveal';
 
-const COURSES = [
-  { name: 'AI Chat Essentials' },
-  { name: 'AI in Everyday Business Tools' },
-  { name: 'Prompt Engineering for Business' },
-  { name: 'AI for Sales & Revenue' },
-  { name: 'AI for Marketing & Content' },
-  { name: 'AI for Operations & Logistics' },
-  { name: 'AI for HR & People Ops' },
-  { name: 'AI for Finance & Accounting' },
-  { name: 'AI for Customer Service' },
-  { name: 'AI Security, Privacy & Compliance' },
-  { name: 'AI for Project Managers' },
-  { name: 'Building Your Personal AI Toolkit' },
+const COURSE_TIERS = [
+  {
+    tier: 'Foundation',
+    courses: [
+      { name: 'Mastering Claude: From Chat to Power User', desc: 'Claude interface, Projects, Artifacts, system prompts, attachments, and multi-turn conversations. Why Claude is the business AI platform of choice.' },
+      { name: 'Prompt Engineering That Actually Works', desc: 'Claude-specific techniques: XML tags, chain-of-thought, role prompting, few-shot examples, and structured outputs. Hands-on with real business scenarios.' },
+      { name: 'AI Security, Privacy & Responsible Use', desc: 'Enterprise data policies, Claude\u2019s safety model, shadow AI governance, regulatory awareness (GDPR, HIPAA, SOC2), and knowing when not to use AI.' },
+    ],
+  },
+  {
+    tier: 'Practitioner',
+    courses: [
+      { name: 'Claude Code for Business Professionals', desc: 'Use Claude Code to automate tasks, manage projects, write scripts, and analyze data \u2014 no developer background required.' },
+      { name: 'Building Your AI Coworker', desc: 'Create Claude Projects as persistent AI teammates: custom instructions, knowledge bases, and role-specific assistants for every function on your team.' },
+      { name: 'AI-Powered Business Workflows', desc: 'Connect AI to CRM, email, docs, and spreadsheets. Practical automation recipes for the tools your team already uses \u2014 not theory.' },
+    ],
+  },
+  {
+    tier: 'Advanced',
+    courses: [
+      { name: 'Agentic AI: Autonomous Workflows', desc: 'What AI agents are, how they work, and when to deploy them. Multi-step task completion, tool use, and real-world agentic use cases for business.' },
+      { name: 'MCP Servers & AI Tool Integration', desc: 'Connect Claude to databases, APIs, and internal tools using Model Context Protocol. Hands-on: stand up an MCP server and give your AI real capabilities.' },
+      { name: 'Building Custom AI Agents', desc: 'Design, test, and deploy AI agents for business processes using Claude\u2019s Agent SDK. From architecture to production-ready autonomous workflows.' },
+    ],
+  },
+  {
+    tier: 'Role-Specific',
+    courses: [
+      { name: 'AI for Sales Teams: Claude-Powered Revenue', desc: 'Proposal generation, competitive intel with Claude Projects, outreach drafting with prompt templates, and pipeline automation.' },
+      { name: 'AI for Marketing & Content: Brief to Published', desc: 'Claude for content calendars, SEO drafts, campaign copy, and brand voice consistency using system prompts and Projects.' },
+      { name: 'AI for Leaders: Strategy, ROI & Adoption', desc: 'Build an AI adoption roadmap, measure ROI, manage organizational change, evaluate vendors, and communicate AI strategy to the board.' },
+    ],
+  },
 ];
+
+const COURSES = COURSE_TIERS.flatMap(t => t.courses);
 
 export default function Training() {
   useScrollReveal();
 
   return (
     <>
+      <Seo
+        title="AI Training"
+        description="12 hands-on courses from Claude essentials to agentic AI and MCP servers. Live, instructor-led training with prompt libraries and reference materials."
+        path="/training"
+      />
       {/* ── Hero ── */}
       <section className="hero">
         <div className="hero-centered">
@@ -30,7 +59,7 @@ export default function Training() {
             AI Training That <span className="word-accent">Sticks</span>
           </h1>
           <p className="hero-brutal__desc">
-            Because tools without skills are just toys. Live, interactive training with built-in breakout sessions for focused review and hands-on coaching.
+            Master Claude, build AI agents, connect MCP servers, and deploy autonomous workflows. Live, hands-on training built by practitioners — not slide-deck consultants.
           </p>
           <div className="hero-brutal__actions">
             <Link to="/get-started" className="btn btn-primary btn-lg">
@@ -64,25 +93,36 @@ export default function Training() {
 
       <hr className="section-divider" />
 
-      {/* ── Course Catalog: Bordered rows ── */}
+      {/* ── Course Catalog: Tiered rows ── */}
       <section className="section reveal">
         <div className="section-label">Course Catalog</div>
-        <h2 className="section-title">12 Courses Across Every Business Function</h2>
+        <h2 className="section-title">12 Courses — From Claude Essentials to Agentic AI</h2>
         <p className="section-subtitle" style={{ marginBottom: 'var(--space-3xl)' }}>
-          Each course features live, instructor-led delivery with interactive exercises and small group breakout sessions.
+          Hands-on, Claude-focused training with live instruction, interactive exercises, and small group breakout sessions. Built by practitioners who deploy AI systems — not slide-deck consultants.
         </p>
 
-        <div className="course-list">
-          {COURSES.map((course, i) => (
-            <div key={course.name} className="course-row">
-              <span className="course-row__number">{String(i + 1).padStart(2, '0')}</span>
-              <div style={{ flex: 1 }}>
-                <div className="course-row__name">{course.name}</div>
-              </div>
-              <ChevronRight size={18} className="course-row__arrow" />
+        {COURSE_TIERS.map((tier) => (
+          <div key={tier.tier} style={{ marginBottom: 'var(--space-2xl)' }}>
+            <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--accent-orange)', marginBottom: 'var(--space-sm)', paddingLeft: 'var(--space-md)' }}>
+              {tier.tier}
             </div>
-          ))}
-        </div>
+            <div className="course-list">
+              {tier.courses.map((course) => (
+                <div key={course.name} className="course-row" style={{ flexDirection: 'column', alignItems: 'flex-start', gap: '0.25rem' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', width: '100%' }}>
+                    <div style={{ flex: 1 }}>
+                      <div className="course-row__name">{course.name}</div>
+                    </div>
+                    <ChevronRight size={18} className="course-row__arrow" />
+                  </div>
+                  <p style={{ fontSize: '0.82rem', color: 'var(--text-body)', lineHeight: 1.55, margin: 0, paddingRight: 'var(--space-xl)' }}>
+                    {course.desc}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
       </section>
 
       <hr className="section-divider" />
@@ -149,10 +189,10 @@ export default function Training() {
         <h2 className="section-title">Right Content for the Right Audience</h2>
         <div className="capability-grid" style={{ marginTop: 'var(--space-2xl)' }}>
           {[
-            { title: 'C-Suite / Founders', desc: 'Strategic AI literacy, risk/opportunity assessment, board communication' },
-            { title: 'VP / Senior Leaders', desc: 'Department AI roadmaps, change management, vendor evaluation' },
-            { title: 'Managers', desc: 'Team workflows, tool adoption, measuring AI ROI' },
-            { title: 'Employees', desc: 'Hands-on tool usage, prompt skills, productivity gains, compliance basics' },
+            { title: 'C-Suite / Founders', desc: 'AI strategy & ROI, agentic AI opportunities, Claude for executive decision support, board-ready AI narratives' },
+            { title: 'VP / Senior Leaders', desc: 'Department AI roadmaps, MCP integration planning, vendor evaluation, change management for AI adoption' },
+            { title: 'Managers', desc: 'Claude Projects for team workflows, AI coworker setup, measuring AI ROI, adoption playbooks' },
+            { title: 'Employees', desc: 'Hands-on Claude & Claude Code, prompt engineering, AI-powered productivity, building personal AI workflows' },
           ].map((level) => (
             <div key={level.title} className="capability-block">
               <h3 className="capability-block__title">{level.title}</h3>
@@ -165,16 +205,7 @@ export default function Training() {
       <hr className="section-divider" />
 
       {/* ── CTA ── */}
-      <div className="cta-band-wrapper">
-        <section className="cta-band reveal">
-          <div className="section-label">Grab an Invite Now!</div>
-          <h2 className="section-title">Ready to Train Your Team on AI?</h2>
-          <form className="cta-band-form" onSubmit={e => e.preventDefault()}>
-            <input type="email" className="form-input" placeholder="Enter your work email" />
-            <button type="submit" className="btn btn-primary">Submit</button>
-          </form>
-        </section>
-      </div>
+      <InviteCta title="Ready to Train Your Team on AI?" />
     </>
   );
 }

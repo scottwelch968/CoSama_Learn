@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight, Brain, Users, Rocket, Target, CheckCircle, Lightbulb, TrendingUp } from 'lucide-react';
+import InviteCta from '../components/InviteCta';
+import Seo from '../components/Seo';
 import useScrollReveal from '../hooks/useScrollReveal';
 
 export default function Home() {
@@ -7,6 +9,10 @@ export default function Home() {
 
   return (
     <>
+      <Seo
+        description="AI coaching, training, and consulting for business. Master Claude, build AI agents, and deploy autonomous workflows. From the C-suite to the front lines."
+        path="/"
+      />
       {/* ── Hero: Asymmetric 3fr/2fr with dot-grid aside ── */}
       <section className="hero">
         <div className="hero-brutal">
@@ -103,7 +109,7 @@ export default function Home() {
               <Users size={24} className="editorial-cell__icon" style={{ marginBottom: 'var(--space-sm)' }} />
               <h3 className="editorial-cell__title" style={{ marginBottom: 'var(--space-sm)' }}>Team Training</h3>
               <p className="editorial-cell__text">
-                From chatbot basics to AI-integrated workflows. Live, interactive sessions with full materials included.
+                From Claude essentials to agentic AI and MCP servers. Live, hands-on sessions with full materials included.
               </p>
               <div style={{ marginTop: 'auto', paddingTop: 'var(--space-md)' }}>
                 <Link to="/training" className="editorial-cell__link">View Courses <ArrowRight size={14} /></Link>
@@ -235,16 +241,7 @@ export default function Home() {
       <hr className="section-divider" />
 
       {/* ── CTA ── */}
-      <div className="cta-band-wrapper">
-        <section className="cta-band reveal">
-          <div className="section-label">Grab an Invite Now!</div>
-          <h2 className="section-title">Start Your AI Journey Today</h2>
-          <form className="cta-band-form" onSubmit={e => e.preventDefault()}>
-            <input type="email" className="form-input" placeholder="Enter your work email" />
-            <button type="submit" className="btn btn-primary">Submit</button>
-          </form>
-        </section>
-      </div>
+      <InviteCta title="Start Your AI Journey Today" />
     </>
   );
 }

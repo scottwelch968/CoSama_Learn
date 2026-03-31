@@ -4,18 +4,25 @@
   "description": "",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "node server.js",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "node server.js --prod",
+    "start": "node server.js --prod"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@react-email/components": "^1.0.10",
+    "@react-email/render": "^2.0.4",
+    "dotenv": "^17.3.1",
+    "express": "^5.2.1",
     "lucide-react": "^0.577.0",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
-    "react-router-dom": "^7.13.1"
+    "react-helmet-async": "^3.0.0",
+    "react-router-dom": "^7.13.1",
+    "resend": "^6.10.0"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.3.4",

@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight, Building2, Wrench, GraduationCap, Target, Lightbulb, TrendingUp } from 'lucide-react';
+import InviteCta from '../components/InviteCta';
+import Seo from '../components/Seo';
 import useScrollReveal from '../hooks/useScrollReveal';
 
 export default function About() {
@@ -7,6 +9,11 @@ export default function About() {
 
   return (
     <>
+      <Seo
+        title="About Us"
+        description="Founded by an IT industry veteran. We build AI orchestration systems — then teach what we've learned. Practitioner-first AI coaching and training."
+        path="/about"
+      />
       {/* ── Hero ── */}
       <section className="hero">
         <div className="hero-centered">
@@ -146,16 +153,7 @@ export default function About() {
       <hr className="section-divider" />
 
       {/* ── CTA ── */}
-      <div className="cta-band-wrapper">
-        <section className="cta-band reveal">
-          <div className="section-label">Grab an Invite Now!</div>
-          <h2 className="section-title">Every Business Deserves Access to AI Expertise</h2>
-          <form className="cta-band-form" onSubmit={e => e.preventDefault()}>
-            <input type="email" className="form-input" placeholder="Enter your work email" />
-            <button type="submit" className="btn btn-primary">Submit</button>
-          </form>
-        </section>
-      </div>
+      <InviteCta title="Every Business Deserves Access to AI Expertise" />
     </>
   );
 }
