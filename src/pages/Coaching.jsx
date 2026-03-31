@@ -140,7 +140,7 @@ export default function Coaching() {
                 Ongoing advisory, board prep, AI vendor evaluation, or second opinions on AI proposals.
               </p>
               <div className="pricing-inline" style={{ marginTop: 'auto', paddingTop: 'var(--space-md)' }}>
-                Starting at <span className="pricing-inline__value">$375/hr</span> &middot; bundles available
+                Starting at <span className="pricing-inline__value">$250/hr</span> &middot; bundles available
               </div>
             </div>
           </div>
@@ -149,7 +149,7 @@ export default function Coaching() {
         <div style={{ marginTop: 'var(--space-lg)', display: 'flex', gap: 'var(--space-xl)', flexWrap: 'wrap' }}>
           {[
             { icon: <Video size={14} />, text: 'Video conference available' },
-            { icon: <MapPin size={14} />, text: 'On-site delivery (travel included)' },
+            { icon: <MapPin size={14} />, text: 'In-person delivery available; travel billed separately' },
             { icon: <Clock size={14} />, text: 'Training courses can be bundled' },
           ].map(({ icon, text }) => (
             <span key={text} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.75rem', fontFamily: 'var(--font-mono)', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.08em' }}>
@@ -179,8 +179,8 @@ export default function Coaching() {
             {[
               { session: 'Single Session', rate: '$500/hr', total: '$500' },
               { session: 'Strategy Block (2 hrs)', rate: '$400/hr', total: '$800' },
-              { session: 'Half-Day Deep Dive (4 hrs)', rate: '$400/hr', total: '$1,600' },
-              { session: 'Full-Day Intensive (8 hrs)', rate: '$375/hr', total: '$3,000' },
+              { session: 'Half-Day Deep Dive (4 hrs)', rate: '$300/hr', total: '$1,200' },
+              { session: 'Full-Day Intensive (8 hrs)', rate: '$250/hr', total: '$2,000' },
             ].map(({ session, rate, total }) => (
               <div key={session} className="flex-table__row">
                 <span className="flex-table__session">{session}</span>
@@ -189,6 +189,17 @@ export default function Coaching() {
               </div>
             ))}
           </div>
+          <p
+            style={{
+              marginTop: 'var(--space-md)',
+              fontSize: '0.8rem',
+              fontFamily: 'var(--font-mono)',
+              color: 'var(--text-muted)',
+              lineHeight: 1.7,
+            }}
+          >
+            *All coaching is delivered online via Zoom video calls. In-person sessions incur travel costs.
+          </p>
         </section>
       </div>
 
