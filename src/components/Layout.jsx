@@ -19,7 +19,7 @@ export default function Layout() {
       <nav className="nav">
         <div className="nav-inner">
           <Link to="/" className="nav-logo" onClick={() => setMobileOpen(false)}>
-            <span className="nav-logo-text">learn.cosama</span>
+            <span className="nav-logo-text">CoSama</span>
           </Link>
 
           <div className="nav-links">
