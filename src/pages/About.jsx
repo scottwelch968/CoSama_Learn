@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight, Building2, Wrench, GraduationCap, Target, Lightbulb, TrendingUp } from 'lucide-react';
+import { ArrowRight, Building2, Wrench, GraduationCap } from 'lucide-react';
 import InviteCta from '../components/InviteCta';
 import Seo from '../components/Seo';
 import useScrollReveal from '../hooks/useScrollReveal';
@@ -98,36 +98,6 @@ export default function About() {
           </div>
         </div>
       </section>
-
-      <hr className="section-divider" />
-
-      {/* ── Approach: Dark split ── */}
-      <div className="section-dark">
-        <section className="section reveal">
-          <div className="editorial-split">
-            <div>
-              <div className="section-label">Our Approach</div>
-              <h2 className="section-title">Built by AI Practitioners, Not Theorists</h2>
-              <p className="section-subtitle">
-                Our coaching practice is powered by real experience building AI orchestration systems.
-              </p>
-            </div>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
-              {[
-                { icon: <Target size={18} />, text: 'Systems architecture background' },
-                { icon: <Wrench size={18} />, text: 'Full-stack AI deployment experience' },
-                { icon: <Lightbulb size={18} />, text: 'Production-tested, not demo-only' },
-                { icon: <TrendingUp size={18} />, text: 'From startup to enterprise scale' },
-              ].map(({ icon, text }) => (
-                <div key={text} className="feature-pill-dark">
-                  <span className="feature-pill-dark__icon">{icon}</span>
-                  <span className="feature-pill-dark__text">{text}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-      </div>
 
       <hr className="section-divider" />
 

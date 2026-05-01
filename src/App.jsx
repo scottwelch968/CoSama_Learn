@@ -9,6 +9,7 @@ import Consulting from './pages/Consulting';
 import Contact from './pages/Contact';
 import GetStarted from './pages/GetStarted';
 import SmallBusiness from './pages/SmallBusiness';
+import Courses from './pages/Courses';
 
 export default function App() {
   return (
@@ -24,6 +25,7 @@ export default function App() {
         <Route path="contact" element={<Contact />} />
         <Route path="get-started" element={<GetStarted />} />
         <Route path="small-business" element={<SmallBusiness />} />
+        <Route path="courses" element={<Courses />} />
       </Route>
     </Routes>
     </>

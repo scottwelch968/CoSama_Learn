@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { ArrowRight, Clock, MessageSquare, CheckCircle } from 'lucide-react';
 import Seo from '../components/Seo';
 import useScrollReveal from '../hooks/useScrollReveal';
+import { apiUrl } from '../lib/api';
 
 const INTEREST_OPTIONS = ['Coaching', 'Training', 'Consulting', 'Not sure yet'];
 const CONTACT_METHOD_OPTIONS = ['Email', 'Phone', 'Video Call'];
@@ -59,7 +60,7 @@ export default function Contact() {
       let response;
 
       try {
-        response = await fetch('/api/contact', {
+        response = await fetch(apiUrl('/api/contact'), {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

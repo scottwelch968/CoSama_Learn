@@ -5,6 +5,7 @@ import { Menu, X, ArrowRight } from 'lucide-react';
 const NAV_LINKS = [
   { to: '/coaching', label: 'Coaching' },
   { to: '/training', label: 'Training' },
+  { to: '/courses', label: 'Courses' },
   { to: '/consulting', label: 'Consulting' },
   { to: '/about', label: 'About' },
   { to: '/contact', label: 'Contact' },
@@ -90,6 +91,7 @@ export default function Layout() {
               <div className="footer-col-title">Services</div>
               <Link to="/coaching" className="footer-link">Executive Coaching</Link>
               <Link to="/training" className="footer-link">Team Training</Link>
+              <Link to="/courses" className="footer-link">Courses</Link>
               <Link to="/consulting" className="footer-link">AI Consulting</Link>
               <Link to="/get-started" className="footer-link">Get Started</Link>
             </div>

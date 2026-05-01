@@ -77,39 +77,6 @@ export default function Consulting() {
 
       <hr className="section-divider" />
 
-      {/* ── Pricing: Discreet editorial section (NOT a big card) ── */}
-      <div className="section-dark">
-        <section className="section reveal">
-          <div className="editorial-split" style={{ alignItems: 'start' }}>
-            <div>
-              <div className="section-label">Engagement Model</div>
-              <h2 className="section-title">Transparent Starting Point</h2>
-              <p className="section-subtitle" style={{ marginBottom: 'var(--space-xl)' }}>
-                Initial discovery and assessment sessions are billed hourly. All implementation, integration, and project management engagements are scoped and priced as custom proposals.
-              </p>
-              <div className="pricing-inline" style={{ fontSize: '0.7rem' }}>
-                Discovery & Assessment: <span className="pricing-inline__value">$500/hr</span> &middot; Implementation: <span className="pricing-inline__value">Custom proposals</span>
-              </div>
-            </div>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
-              {[
-                'Scoped to your requirements',
-                'Milestone-based delivery',
-                'No surprises — clear timelines',
-                'Post-deployment support included',
-              ].map(text => (
-                <div key={text} className="feature-pill-dark">
-                  <span className="feature-pill-dark__icon"><CheckCircle size={16} /></span>
-                  <span className="feature-pill-dark__text">{text}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-      </div>
-
-      <hr className="section-divider" />
-
       {/* ── Who This Is For ── */}
       <section className="section reveal">
         <div className="section-label">Who This Is For</div>

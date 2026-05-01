@@ -44,7 +44,49 @@ const configuredContactRecipients = (process.env.CONTACT_FORM_TO || '')
     .map((email) => email.trim())
     .filter(Boolean);
 
+function parseCsv(value) {
+    return String(value || '')
+        .split(',')
+        .map((item) => item.trim())
+        .filter(Boolean);
+}
+
+const defaultAllowedOrigins = [
+    'https://cosama.co',
+    'https://www.cosama.co',
+    'https://learn.cosama.co',
+];
+const configuredAllowedOrigins = parseCsv(process.env.ALLOWED_ORIGINS || process.env.CORS_ORIGINS);
+const allowedOrigins = new Set([...defaultAllowedOrigins, ...configuredAllowedOrigins]);
+const allowAnyOrigin = allowedOrigins.has('*');
+
 app.disable('x-powered-by');
+app.use((req, res, next) => {
+    if (!req.path.startsWith('/api/')) {
+        next();
+        return;
+    }
+
+    const origin = req.get('origin');
+    const isAllowedOrigin = origin && (allowAnyOrigin || allowedOrigins.has(origin));
+
+    if (isAllowedOrigin) {
+        res.setHeader('Access-Control-Allow-Origin', allowAnyOrigin ? '*' : origin);
+        res.setHeader('Access-Control-Allow-Methods', 'GET,POST,OPTIONS');
+        res.setHeader(
+            'Access-Control-Allow-Headers',
+            req.get('access-control-request-headers') || 'Content-Type'
+        );
+        res.setHeader('Vary', 'Origin');
+    }
+
+    if (req.method === 'OPTIONS') {
+        res.sendStatus(origin && !isAllowedOrigin ? 403 : 204);
+        return;
+    }
+
+    next();
+});
 app.use(express.json({ limit: '1mb' }));
 
 app.get('/api/health', (_req, res) => {

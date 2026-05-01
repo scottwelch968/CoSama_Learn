@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useLocation } from 'react-router-dom';
+import { apiUrl } from '../lib/api';
 
 const initialState = {
     email: '',
@@ -36,7 +37,7 @@ export function InviteForm({ title, buttonLabel = 'Submit' }) {
             let response;
 
             try {
-                response = await fetch('/api/invite', {
+                response = await fetch(apiUrl('/api/invite'), {
                     body: JSON.stringify({
                         email: formData.email,
                         source: location.pathname,

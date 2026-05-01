@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight, Brain, Users, Rocket, Target, CheckCircle, Lightbulb, TrendingUp } from 'lucide-react';
+import { ArrowRight, Brain, Users, Rocket } from 'lucide-react';
 import InviteCta from '../components/InviteCta';
 import Seo from '../components/Seo';
 import useScrollReveal from '../hooks/useScrollReveal';
@@ -182,36 +182,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      <hr className="section-divider" />
-
-      {/* ── Why Cosama: Dark split ── */}
-      <div className="section-dark">
-        <section className="section reveal">
-          <div className="editorial-split">
-            <div>
-              <div className="section-label">Why Cosama</div>
-              <h2 className="section-title">Built by AI Practitioners, Not Theorists</h2>
-              <p className="section-subtitle">
-                We don't just talk about AI. We deploy it, we train on it, and we help you operationalize it.
-              </p>
-            </div>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
-              {[
-                { icon: <Target size={18} />, text: 'Practitioner-first approach' },
-                { icon: <CheckCircle size={18} />, text: 'Enterprise-grade thinking' },
-                { icon: <Lightbulb size={18} />, text: 'Outcomes, not slide decks' },
-                { icon: <TrendingUp size={18} />, text: 'From startup to Fortune 500' },
-              ].map(({ icon, text }) => (
-                <div key={text} className="feature-pill-dark">
-                  <span className="feature-pill-dark__icon">{icon}</span>
-                  <span className="feature-pill-dark__text">{text}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-      </div>
 
       <hr className="section-divider" />
 
